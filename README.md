@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# E-SCAN: Ethereum Smart Contract Analyzer
+
+E-SCAN is a modern AI SaaS dashboard for Web3 smart contract analysis. Built with cutting-edge technologies, it currently features wallet integration, intelligent intent routing, frontend interaction, and a mock AI deep learning simulation, establishing the infrastructure for future ML and NLP agent replacements.
+
+## Features
+
+- **Web3 Wallet Connection**: Connect with MetaMask, securely checking address, live balances, and network parameters.
+- **Intent Router Core**: Distinguishes between checking "balance", querying "transactions", or running "analysis".
+- **AI Vulnerability Analysis Simulation**: Includes a mock delay and response framework built in Preparation for advanced deep-learning NLP integration. 
+- **Modern User Interface**: State-of-the-art UI utilizing Tailwind CSS, Framer Motion, and Glassmorphism design principles.
+
+## Tech Stack
+
+- **Frontend**: Next.js 16 (App Router), React, TypeScript, Tailwind CSS, Framer Motion, Lucide Icons.
+- **Blockchain**: `ethers.js` v6 for client-side and server-side RPC interaction.
+- **Backend API**: Modular Next.js Serverless Route.
 
 ## Getting Started
 
-First, run the development server:
+1. Clone and install dependencies:
+   ```bash
+   npm install
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. Setup Environment Variables:
+   Add your configurations to `.env.local`:
+   ```env
+   NEXT_PUBLIC_RPC_URL=https://your-rpc-url.example.com
+   NEXT_PUBLIC_CHAIN_ID=1
+   ```
+   *(If omitted, server-side blockchain queries may not function properly, but client MetaMask connections will still work.)*
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Upcoming Milestones
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Replace `mockAI.ts` backend service with actual Deep Learning implementation.
+- Introduce advanced LLM integration inside the NLP Chatbot intent responder.
