@@ -1,17 +1,17 @@
 # E-SCAN: Ethereum Smart Contract Analyzer
 
-E-SCAN is a modern AI SaaS dashboard for Web3 smart contract analysis. Built with cutting-edge technologies, it currently features wallet integration, intelligent intent routing, frontend interaction, and a mock AI deep learning simulation, establishing the infrastructure for future ML and NLP agent replacements.
+E-SCAN (Ethereum Smart Contract Analyzer) is a Web3 security assistant that enables smart contract analysis through an interactive chat-based interface. It integrates Ethereum wallet connectivity, blockchain data retrieval, and intelligent backend intent routing within a scalable full-stack architecture.
 
 ## Features
 
 - **Web3 Wallet Connection**: Connect with MetaMask, securely checking address, live balances, and network parameters.
 - **Intent Router Core**: Distinguishes between checking "balance", querying "transactions", or running "analysis".
 - **AI Vulnerability Analysis Simulation**: Includes a mock delay and response framework built in Preparation for advanced deep-learning NLP integration. 
-- **Modern User Interface**: State-of-the-art UI utilizing Tailwind CSS, Framer Motion, and Glassmorphism design principles.
+- **Modern User Interface**: State-of-the-art UI utilizing Tailwind CSS, featuring a sleek, Vercel-inspired monochrome minimal dark theme allowing you to focus on the code.
 
 ## Tech Stack
 
-- **Frontend**: Next.js 16 (App Router), React, TypeScript, Tailwind CSS, Framer Motion, Lucide Icons.
+- **Frontend**: Next.js 16 (App Router), React, TypeScript, Tailwind Css, Lucide Icons.
 - **Blockchain**: `ethers.js` v6 for client-side and server-side RPC interaction.
 - **Backend API**: Modular Next.js Serverless Route.
 
@@ -37,7 +37,3 @@ E-SCAN is a modern AI SaaS dashboard for Web3 smart contract analysis. Built wit
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Upcoming Milestones
-
-- Replace `mockAI.ts` backend service with actual Deep Learning implementation.
-- Introduce advanced LLM integration inside the NLP Chatbot intent responder.
