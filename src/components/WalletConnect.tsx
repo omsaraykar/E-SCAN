@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import { connectWallet, getBalance, getNetwork } from "@/lib/ethereum";
-import { Wallet, Loader2 } from "lucide-react";
-
+import { Wallet, Loader2, X } from "lucide-react";
 export const WalletConnect = ({ onConnect }: { onConnect?: (address: string) => void }) => {
     const [address, setAddress] = useState<string | null>(null);
     const [balance, setBalance] = useState<string | null>(null);
@@ -32,6 +31,12 @@ export const WalletConnect = ({ onConnect }: { onConnect?: (address: string) => 
         }
     };
 
+    const handleDisconnect = () => {
+        setAddress(null);
+        setBalance(null);
+        setNetwork(null);
+    };
+
     if (address) {
         return (
             <div className="flex items-center gap-3 px-3 py-1.5 border border-white/10 rounded-md bg-[#0A0A0A]">
@@ -51,6 +56,16 @@ export const WalletConnect = ({ onConnect }: { onConnect?: (address: string) => 
                 <span className="text-xs text-white font-medium">
                     {parseFloat(balance || "0").toFixed(3)} ETH
                 </span>
+
+                <div className="h-4 w-[1px] bg-white/10" />
+
+                <button
+                    onClick={handleDisconnect}
+                    className="p-1 hover:bg-white/10 rounded transition-colors text-neutral-400 hover:text-white"
+                    title="Disconnect Wallet"
+                >
+                    <X className="w-3.5 h-3.5" />
+                </button>
             </div>
         );
     }
