@@ -1,0 +1,16 @@
+{
+    "module": "keras_nlp.src.models.deberta_v3.deberta_v3_tokenizer",
+    "class_name": "DebertaV3Tokenizer",
+    "config": {
+        "name": "deberta_v3_tokenizer",
+        "trainable": true,
+        "dtype": "int32",
+        "proto": null,
+        "sequence_length": null
+    },
+    "registered_name": "keras_nlp>DebertaV3Tokenizer",
+    "assets": [
+        "assets/tokenizer/vocabulary.spm"
+    ],
+    "weights": null
+}

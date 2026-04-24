@@ -1,0 +1,19 @@
+{
+    "module": "keras_nlp.src.models.deberta_v3.deberta_v3_backbone",
+    "class_name": "DebertaV3Backbone",
+    "config": {
+        "name": "deberta_v3_backbone",
+        "trainable": true,
+        "vocabulary_size": 128100,
+        "num_layers": 12,
+        "num_heads": 12,
+        "hidden_dim": 768,
+        "intermediate_dim": 3072,
+        "dropout": 0.1,
+        "max_sequence_length": 512,
+        "bucket_size": 256
+    },
+    "registered_name": "keras_nlp>DebertaV3Backbone",
+    "assets": [],
+    "weights": "model.weights.h5"
+}
