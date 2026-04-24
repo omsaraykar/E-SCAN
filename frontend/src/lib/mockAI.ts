@@ -1,17 +1,29 @@
 import { AnalysisResult } from "./types";
 
-/**
- * Simulates an AI deep learning model processing a smart contract.
- */
 export const analyzeContract = async (code: string): Promise<AnalysisResult> => {
-    // Simulate network delay for mock AI
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    return {
-        vulnerability: "Reentrancy",
-        confidence: 0.84,
-        explanation: "Mock AI response. Deep learning model not integrated yet. The contract potentially allows an external call to hijack control flow before state updates are finalized."
-    };
+    try {
+        const response = await fetch("http://localhost:8000/predict", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ code })
+        });
+        
+        if (!response.ok) {
+            throw new Error(`Backend error: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        return {
+            vulnerability: data.vulnerability,
+            confidence: 1.0,
+            explanation: `Your code belongs to vulnerability: ${data.vulnerability}`
+        };
+    } catch (error: any) {
+        throw new Error(`Failed to contact analyzer service: ${error.message}`);
+    }
 };
 
 /**

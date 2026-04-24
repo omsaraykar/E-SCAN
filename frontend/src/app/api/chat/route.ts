@@ -48,7 +48,7 @@ export async function POST(req: Request) {
                     const code = codeMatch ? codeMatch[1] : message.replace(/analyze(?:\s*contract)?/gi, "").trim() || "Dummy contract";
 
                     const analysis = await analyzeContract(code);
-                    assistantReply = `🔍 **Vulnerability Found**: ${analysis.vulnerability}\n\n📈 **Confidence**: ${(analysis.confidence * 100).toFixed(1)}%\n\n📝 **Explanation**: ${analysis.explanation}`;
+                    assistantReply = `Your code belongs to vulnerability: ${analysis.vulnerability}`;
                 } catch (error: any) {
                     assistantReply = `Analysis failed: ${error.message}`;
                 }
