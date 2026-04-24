@@ -1,0 +1,8 @@
+__pycache__/
+backend/venv/
+backend/*.pyc
+backend/*.pkl
+backend/*.h5
+backend/*.pt
+backend/.env
+backend/model/

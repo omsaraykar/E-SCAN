@@ -18,7 +18,7 @@ app = FastAPI(title="Smart Contract Vulnerability Detection API")
 # Configure CORS for frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["https://e-scan-gray.vercel.app/"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
