@@ -2,6 +2,7 @@
 
 import { Message } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import ReactMarkdown from "react-markdown";
 
 export const MessageBubble = ({ message }: { message: Message }) => {
     const isUser = message.role === "user";
@@ -14,11 +15,15 @@ export const MessageBubble = ({ message }: { message: Message }) => {
                 </div>
                 <div
                     className={cn(
-                        "py-1.5 px-0 whitespace-pre-wrap text-[14px] leading-relaxed",
+                        "py-1.5 px-0 whitespace-pre-wrap text-[14px] leading-relaxed markdown-content",
                         isUser ? "text-neutral-200" : "text-neutral-300"
                     )}
                 >
-                    {message.content}
+                    {isUser ? message.content : (
+                        <ReactMarkdown>
+                            {message.content}
+                        </ReactMarkdown>
+                    )}
                 </div>
             </div>
         </div>
